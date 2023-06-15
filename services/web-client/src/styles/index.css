@@ -1,0 +1,90 @@
+@font-face {
+  font-weight: 500;
+  font-family: "SF Pro Display";
+  src: url("./fonts/SF-Pro-Display-Medium.otf");
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "SF Pro Display";
+  src: url("./fonts/SF-Pro-Display-Regular.otf");
+}
+
+:root {
+  --primary-black: #181B1D;
+  --primary-gray-dark: #1F2224;
+  --primary-gray: #333638;
+  --primary-gray-light: #808588;
+
+  --primary-white: #FFFFFF;
+
+  --primary-blue: #315ac2;
+  --primary-blue-50pr: rgba(49, 90, 194, 0.5);
+  --primary-blue-light: #d3dbf0;
+  --secondary-blue: #294896;
+
+  --secondary-red: #FF4E4E;
+
+  --overlay-white: rgba(255, 255, 255, 0.466);
+}
+
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+.textBoldMin {
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.textBoldNormal {
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.textBoldMax {
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.textNormMin {
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.textNormNormal {
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.textNormMiddle {
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.textNormMax {
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+}

@@ -1,0 +1,14 @@
+.userItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 0;
+
+    width: 90%;
+
+    position: relative;
+
+    border-top: 1px solid var(--primary-blue-50pr);
+}

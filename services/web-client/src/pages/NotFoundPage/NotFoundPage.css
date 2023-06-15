@@ -1,0 +1,28 @@
+.notFoundPage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--overlay-white-25pr);
+}
+
+.notFoundPage h1 {
+    color: var(--primary-gray-dark);
+
+    font-size: 70px;
+
+    text-align: center;
+}
+
+.notFoundPage p {
+    color: var(--primary-gray-dark);
+}
+
+.notFoundUrl {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
