@@ -78,16 +78,15 @@
     flex-grow: 0;
 }
 
-.userListHeader {
+.noUsers {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-
-    margin: 22px 79px;
-
+    justify-content: center;
     color: var(--primary-gray-dark);
+    padding: 15px 0;
+
+    width: 90%;
+
+    flex-shrink: 0;
 }
-
-

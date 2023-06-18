@@ -6,8 +6,6 @@ services:
       context: ../services
       dockerfile: web-client/Dockerfile.dev
     restart: always
-    volumes:
-      - "../services/web-client:/app"
     ports:
       - "3001:3001"
 
@@ -16,8 +14,9 @@ services:
       context: ../services
       dockerfile: server/Dockerfile.dev
     restart: always
-    volumes:
-      - "../services/server:/app"
+    environment:
+      - PORT=3000
+      - ALLOWED_ORIGIN=http://localhost:3001
     ports:
       - "3000:3000"
 

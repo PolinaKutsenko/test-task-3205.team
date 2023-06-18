@@ -4,19 +4,22 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
-import InputMask from 'react-input-mask';
 
+import { fetchUsers, actions } from '../../slices/usersSlice.js';
 import SubmitButton from '../../components/SubmitButton/SubmitButton.jsx';
 import EmailInput from '../../components/EmailInput/EmailInput.jsx';
 import NumberInput from '../../components/NumberInput/NumberInput.jsx';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner.jsx';
 import UserItem from '../../components/UserItem/UserItem.jsx';
+import UsersHeader from '../../components/UsersHeader/UsersHeader.jsx';
 import './MainPage.css';
 
 const MainPage = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const users = useSelector((state) => state.users.users);
   const loadingStatus = useSelector((state) => state.users.loadingStatus);
+  const isInitialState = useSelector((state) => state.users.isInitialState);
  
   const formik = useFormik({
     initialValues: {
@@ -33,27 +36,23 @@ const MainPage = () => {
     }),
     onSubmit: ({ email, number }) => {
       console.log({ email, number });
+      dispatch(actions.changeInitialState())
+      dispatch(actions.removeAllUsers());
+      dispatch(fetchUsers({ email, number }));
+
+      formik.values.email = '';
+      formik.values.number = '';
     },
   });
 
-  const mainPageContainer = cn('login-container', {
-    'login-container-error': formik.errors.username && formik.touched.username,
-  });
-
   const serverAnswer = useMemo(() => {
-    if (loadingStatus === 'idle' && !users.length) {
+    if (!users.length) {
       return (
-        <div>
-          {t('mainPage.noUsersFound')}
-        </div>
+          <div className="noUsers textNormMiddle">{t('mainPage.noUsersFound')}</div>
       );
-    } else if ((loadingStatus === 'idle' && users.length)) {
+    } else {
       return (
         <>
-          <div className="userListHeader">
-            <div className="emailHeader">{t('mainPage.email')}</div>
-            <div className="numberHeader">{t('mainPage.number')}</div>
-          </div>
           {users.map((user) => <UserItem user={user} key={user.id} />)}
         </>
       );
@@ -85,7 +84,8 @@ const MainPage = () => {
           <SubmitButton />
         </form>
         {loadingStatus === 'loading' && <LoadingSpinner />}
-        {true && <div className="userListContainer textBoldMax">
+        {!isInitialState && loadingStatus === 'idle' && <div className="userListContainer textBoldMax">
+          <UsersHeader />
           {serverAnswer}
         </div>}
       </div>

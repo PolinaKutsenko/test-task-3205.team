@@ -39,12 +39,29 @@
 .formInput input:active {
     box-sizing: border-box;
     border: 1px solid var(--primary-blue);
+    cursor: pointer;
     outline: none;
 }
 
-.error {
+.error input {
     box-sizing: border-box;
     border: 1px solid var(--secondary-red);
     border-radius: 11px;
     outline: none;
 }
+
+.error input:hover {
+    box-sizing: border-box;
+    border: 1px solid var(--secondary-red);
+    cursor: pointer;
+    outline: none;
+}
+
+.error input:focus,
+.error input:active {
+    box-sizing: border-box;
+    border: 1px solid var(--secondary-red);
+    cursor: pointer;
+    outline: none;
+}
+

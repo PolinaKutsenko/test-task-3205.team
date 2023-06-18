@@ -1,6 +1,6 @@
-const apiPath = 'api/v1';
+const apiPath = 'http://localhost:3000/api/v1';
 
 export default {
-  getUsersPath: () => [apiPath, 'login'].join('/'),
+  getUsersPath: () => [apiPath, 'users'].join('/'),
   mainPagePath: () => '/',
 };

@@ -1,0 +1,19 @@
+.userListHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 90%;
+    margin: 22px 0;
+
+    color: var(--primary-gray-dark);
+}
+
+.emailHeader {
+    padding: 0 25px 0 79px;
+}
+
+.numberHeader {
+    padding: 0 40px 0 64px;
+}
