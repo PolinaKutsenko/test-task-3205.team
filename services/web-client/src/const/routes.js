@@ -1,4 +1,6 @@
-const apiPath = 'http://localhost:3000/api/v1';
+import serverUrl from "./serverURL";
+
+const apiPath = `${serverUrl}/api/v1`;
 
 export default {
   getUsersPath: () => [apiPath, 'users'].join('/'),

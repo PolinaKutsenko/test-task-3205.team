@@ -6,7 +6,6 @@ import routes from '../const/routes';
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async (values) => {
   const result = await axios.post(routes.getUsersPath(), values);
-  console.log('!!!!result.data', result.data)
   return result.data;
 });
 
@@ -22,9 +21,6 @@ const usersSlice = createSlice({
     removeAllUsers: (state) => {
       state.users = [];
     },
-    changeInitialState: (state) => {
-      state.isInitialState = false;
-    }
   },
   extraReducers: (builder) => {
     builder
@@ -33,6 +29,7 @@ const usersSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.isInitialState = false;
         state.users = [...state.users, ...action.payload];
         state.loadingStatus = 'idle';
         state.error = null;

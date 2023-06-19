@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
-import cn from 'classnames';
 
 import { fetchUsers, actions } from '../../slices/usersSlice.js';
 import SubmitButton from '../../components/SubmitButton/SubmitButton.jsx';
@@ -17,6 +16,7 @@ import './MainPage.css';
 const MainPage = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+
   const users = useSelector((state) => state.users.users);
   const loadingStatus = useSelector((state) => state.users.loadingStatus);
   const isInitialState = useSelector((state) => state.users.isInitialState);
@@ -35,8 +35,6 @@ const MainPage = () => {
         .string(),
     }),
     onSubmit: ({ email, number }) => {
-      console.log({ email, number });
-      dispatch(actions.changeInitialState())
       dispatch(actions.removeAllUsers());
       dispatch(fetchUsers({ email, number }));
 
@@ -58,7 +56,7 @@ const MainPage = () => {
       );
     }
 
-  }, [users, loadingStatus]);
+  }, [users]);
 
   return (
     <div className="mainPageContainer">

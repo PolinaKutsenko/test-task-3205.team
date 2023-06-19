@@ -12,3 +12,15 @@
 
     border-top: 1px solid var(--primary-blue-50pr);
 }
+
+.userItem .emailUserItem {
+    overflow-wrap: break-word;
+    max-width: 190px;
+    white-space: normal;
+}
+
+.userItem .numberUserItem {
+    overflow-wrap: break-word;
+    max-width: 100px;
+    white-space: normal;
+}

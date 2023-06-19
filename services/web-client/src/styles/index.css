@@ -20,8 +20,10 @@
 
   --primary-blue: #315ac2;
   --primary-blue-50pr: rgba(49, 90, 194, 0.5);
+  --primary-blue-20pr: rgba(49, 90, 194, 0.2);
   --primary-blue-light: #d3dbf0;
   --secondary-blue: #294896;
+  --secondary-blue-dark: #172342;
 
   --secondary-red: #FF4E4E;
 

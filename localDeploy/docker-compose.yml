@@ -1,18 +1,18 @@
-version: "3.8"
+version: "3"
 
 services:
   web-client:
     build:
-      context: ../services
-      dockerfile: web-client/Dockerfile.dev
+      context: ../services/web-client
+      dockerfile: ./Dockerfile.dev
     restart: always
     ports:
       - "3001:3001"
 
   server:
     build:
-      context: ../services
-      dockerfile: server/Dockerfile.dev
+      context: ../services/server
+      dockerfile: ./Dockerfile.dev
     restart: always
     environment:
       - PORT=3000

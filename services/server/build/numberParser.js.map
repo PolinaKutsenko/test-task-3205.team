@@ -1,0 +1,1 @@
+{"version":3,"file":"numberParser.js","sourceRoot":"","sources":["../src/numberParser.ts"],"names":[],"mappings":"AAAA,eAAe,CAAC,SAA6B,EAAU,EAAE;IACvD,IAAI,SAAS,EAAE;QACb,OAAO,SAAS,CAAC,OAAO,CAAC,MAAM,EAAE,EAAE,CAAC,CAAC;KACtC;IACD,OAAO,EAAE,CAAC;AACZ,CAAC,CAAC"}

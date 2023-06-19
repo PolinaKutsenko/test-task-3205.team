@@ -27,7 +27,6 @@
     color: var(--primary-white);
 }
 
-
 .formInput input:hover {
     box-sizing: border-box;
     border: 1px solid var(--primary-gray-light);
@@ -65,3 +64,9 @@
     outline: none;
 }
 
+.formInput input:-webkit-autofill,
+.formInput input:-webkit-autofill:hover, 
+.formInput input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--primary-black);
+  -webkit-box-shadow: 0 0 0px 40rem var(--primary-blue-20pr) inset;
+}

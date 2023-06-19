@@ -19,17 +19,14 @@ app.listen(port, () => {
 })
 
 let responseInprocess = false;
-let timerId: any;
+let timerId: ReturnType<typeof setTimeout>;
 
 app.post('/api/v1/users', (req: Request, res: Response) => {
   if (responseInprocess) {
     clearTimeout(timerId);
-    console.log('!!!clear')
   }
 
   responseInprocess = true;
-
-  console.log('!',req.body, '!')
 
   const email = req.body?.email;
   const number = req.body?.number;
