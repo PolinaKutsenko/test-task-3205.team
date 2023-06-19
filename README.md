@@ -14,7 +14,7 @@ $ git clone https://github.com/PolinaKutsenko/test-task-3205.team.git
 ## Start docker containers with server and web-client
 
 ```
-$ cd localDeploy
+$ cd test-task-3205.team/localDeploy
 
 $ sudo docker compose -f docker-compose.yml up -d
 ```
